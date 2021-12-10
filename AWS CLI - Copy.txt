@@ -1,0 +1,8 @@
+aws ec2 create-vpc --cidr-block 10.0.0.0/16
+aws ec2 create-subnet --vpc-id <vpcId> --cidr-block 10.0.1.0/24
+aws ec2 create-subnet --vpc-id <vpcId> --cidr-block 10.0.0.0/24
+aws ec2 create-internet-gateway
+aws ec2 attach-internet-gateway --vpc-id <vpcId> --internet-gateway-id <InternetGatewayId>
+aws ec2 create-route-table --vpc-id <vpcId>
+aws ec2 create-route --route-table-id <RouteTableId> 
+              --destination-cidr-block 0.0.0.0/0 --gateway-id <nternetGatewayI>
